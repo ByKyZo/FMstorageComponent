@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Fylo data storage component</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="storage__container">
+
+      <div class="storage">
+
+        <div class="storage__menu">
+
+          <div class="storage__menu__logo"><img src="images/logo.svg" alt=""></div> 
+
+          <div class="storage__menu__icons">
+
+            <div class="storage__menu__icons__item"><img src="images/icon-document.svg" alt=""></div>
+
+            <div class="storage__menu__icons__item"><img src="images/icon-folder.svg" alt=""></div>
+
+            <div class="storage__menu__icons__item"><img src="images/icon-upload.svg" alt=""></div>
+
+          </div>
+
+        </div>
+
+        <div class="storage__display">
+
+          <p class="storage__display__text">You’ve used <span class="storage__display__text--bold">815 GB</span> of your storage</p>
+
+          <div class="storage__display__popup">
+
+            <span class="storage__display__popup--bigsize">185 </span><span class="storage__display__popup--minsize">GB Left</span> 
+
+          </div>
+
+          <div class="storage__display__progress-bar">
+
+            <div class="storage__display__progress-bar__line">
+
+              <div class="storage__display__progress-bar__line__inside">
+                <div class="storage__display__progress-bar__line__inside__selector"></div>
+              </div>
+
+            </div>
+
+            <div class="storage__display__progress-bar__size">
+              <span class="storage__display__progress-bar__size__min">0 GB</span> 
+              <span class="storage__display__progress-bar__size__max">1000 GB</span>
+            </div>
+
+          </div>
+          
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">KyZo</a>.
+    </div>
+
+  </div>
+
+</body>
+</html>

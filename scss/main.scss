@@ -1,0 +1,185 @@
+$PaleBlue: hsl(243, 100%, 93%);
+$GrayishBlue: hsl(229, 7%, 55%);
+$DarkBlue: hsl(228, 56%, 26%);
+$VeryDarkBlue: hsl(229, 57%, 11%);
+
+$Gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+
+$padding : 38px;
+
+@mixin borderRadius {
+    border-radius: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 14px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.container{
+    height: 100vh;
+    background-color: rgb(197, 197, 197);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.attribution{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+
+.storage__container{
+    width: 1440px;
+    height: 800px;
+    background-color: $VeryDarkBlue;
+    background-image: url(../images/bg-desktop.png);
+    @media (max-width: 700px){
+        background-image: url(../images/bg-mobile.png);
+        background-size: cover;
+    }
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.storage{
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    justify-content: center;
+    &__menu{
+        height: 202px;
+        width: 350px;
+        @media (max-width: 700px){
+            width: 90%;
+        }    
+        background-color: $DarkBlue;
+        padding: $padding;
+        margin: 15px; //margin-right: 30px;
+        @include borderRadius();
+        border-top-right-radius: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        &__icons{
+            display: flex;
+            &__item{
+                width: 50px;
+                height: 50px;
+                background-color: $VeryDarkBlue;
+                margin-right: 17px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                @include borderRadius();
+            }
+        }
+    }
+    &__display{
+        margin: 15px;
+        color: $PaleBlue;
+        height: 155px;
+        width: 540px;
+        @media (max-width: 700px){
+            width: 90%;
+        }
+        background-color: $DarkBlue;
+        padding: $padding;
+        @include borderRadius();
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; // ou space around avec margin-top sur la progressBar
+        &__text{
+            letter-spacing: 1px;
+            &--bold{
+                font-weight: 700;
+            }
+        }
+        &__popup{
+            height: 72px;
+            width: 185px;
+            background-color: white;
+            position: absolute;
+            right: 40px;
+            top: -45px;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            @include borderRadius();
+            font-weight: 700;
+            @media (max-width: 949px){
+                left: 50%;
+                transform: translateX(-50%);
+                top: unset;
+                bottom: -35px;
+            }
+            &::before{  // ELEMENT TRIANGLE EN ABSOLUTE DU POPUP
+                content: "";
+                position: absolute;
+                right: 0;
+                bottom: -22px;
+                border-left: 30px solid transparent;
+                border-top: 30px solid white;
+                @media (max-width: 949px){
+                    display: none;
+                }         
+            }
+            &--bigsize{
+                color: $VeryDarkBlue;
+                font-size: 2.4rem;
+                margin-right: 12px;
+            }
+            &--minsize{
+                color: $GrayishBlue;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                font-size: 0.8rem;
+            }
+        }
+        &__progress-bar{
+            &__line{
+                height: 20px;
+                width: 100%;
+                background-color: $VeryDarkBlue;
+                margin-bottom: 10px;
+                border-radius: 9999px;
+                padding: 3px;
+                &__inside{
+                    height: 100%;
+                    width: 75%; // 75% de progression
+                    background: linear-gradient(90deg, hsl(6, 100%, 80%) , hsl(335, 100%, 65%));
+                    border-radius: 9999px;
+                    padding: 2px;
+                    display: flex;
+                    justify-content: flex-end;                
+                    &__selector{
+                        background-color: white;
+                        height: 10px;
+                        width: 10px;
+                        border-radius: 9999px;
+                    }
+                }
+            }
+            &__size{
+                display: flex;
+                justify-content: space-between;
+                font-weight: 700;
+                font-size: 0.8rem;
+            }
+        }
+    } 
+}
